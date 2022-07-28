@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "378100304692",
+    "project_id": "medella-faa5e",
+    "storage_bucket": "medella-faa5e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:378100304692:android:f24f243cc4bdd99fcfb361",
+        "android_client_info": {
+          "package_name": "com.medella.medella_new"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "378100304692-jeg35ocbdqtvvjbm1ck6lq5jibhbp057.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvLcPWCwqZ4rngvMuJTLrqhkyouZnAHmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "378100304692-jeg35ocbdqtvvjbm1ck6lq5jibhbp057.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
