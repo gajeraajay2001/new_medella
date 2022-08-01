@@ -8,6 +8,9 @@ environment:
 dependencies: 
   cupertino_icons: ^1.0.2
   cached_network_image: ^3.2.1
+  country_calling_code_picker: ^2.0.1
+  connectivity_plus: ^2.3.6
+  csc_picker: ^0.2.6
   get: 4.6.5
   get_storage: ^2.0.3
   get_it: ^7.2.0
@@ -32,4 +35,4 @@ flutter:
   assets:
     - assets/
     - assets/images/
-    - assets/images/flags/
+    - flags/

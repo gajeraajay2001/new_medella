@@ -8,6 +8,9 @@ import 'package:medella_new/app/constants/sizeConstant.dart';
 import 'package:pinput/pinput.dart';
 
 import '../../../../main.dart';
+import '../../../data/NetworkClient.dart';
+import '../../../routes/app_pages.dart';
+import '../../../utilities/progress_dialog_utils.dart';
 
 class OtpScreenController extends GetxController {
   String verificationId = "";
@@ -55,6 +58,37 @@ class OtpScreenController extends GetxController {
         timerControl!.cancel();
       }
     });
+  }
+
+  callVerifyUserApi({required BuildContext context}) {
+    getIt<CustomDialogs>().showCircularDialog(context);
+    Map<String, dynamic> dict = {};
+    dict["firebase_token"] = box.read(ArgumentConstant.firebaseToken);
+    return NetworkClient.getInstance.callApi(
+      context,
+      baseUrl,
+      ApiConstant.verifyUser,
+      MethodType.Post,
+      header: NetworkClient.getInstance.getAuthHeaders(),
+      params: dict,
+      successCallback: (response, message) {
+        getIt<CustomDialogs>().hideCircularDialog(context);
+
+        if (response["status_code"] == 200 && response["response"] == true) {
+          // Get.toNamed(Routes.NEW_SIGN_UP);
+        } else {
+          getIt<CustomDialogs>()
+              .getDialog(title: "Failed", desc: response["message"]);
+        }
+      },
+      failureCallback: (response, message) {
+        getIt<CustomDialogs>().hideCircularDialog(context);
+
+        getIt<CustomDialogs>()
+            .getDialog(title: "Failed", desc: "Something went wrong.");
+        print(" error");
+      },
+    );
   }
 
   @override

@@ -10,6 +10,9 @@ abstract class Routes {
   static const SIGN_UP_SCREEN = _Paths.SIGN_UP_SCREEN;
   static const SIGN_UP_2_SCREEN = _Paths.SIGN_UP_2_SCREEN;
   static const OTP_SCREEN = _Paths.OTP_SCREEN;
+  static const NEW_SIGN_UP = _Paths.NEW_SIGN_UP;
+  static const NEW_SIGN_UP_2 = _Paths.NEW_SIGN_UP_2;
+  static const NEW_SIGN_UP_3 = _Paths.NEW_SIGN_UP_3;
 }
 
 abstract class _Paths {
@@ -19,4 +22,7 @@ abstract class _Paths {
   static const SIGN_UP_SCREEN = '/sign-up-screen';
   static const SIGN_UP_2_SCREEN = '/sign-up-2-screen';
   static const OTP_SCREEN = '/otp-screen';
+  static const NEW_SIGN_UP = '/new-sign-up';
+  static const NEW_SIGN_UP_2 = '/new-sign-up-2';
+  static const NEW_SIGN_UP_3 = '/new-sign-up-3';
 }

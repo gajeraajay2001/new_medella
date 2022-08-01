@@ -59,14 +59,17 @@ Widget getButton({
   String title = "",
   double borderRadius = 10,
   Color color = Colors.white,
+  Color borderColor = Colors.transparent,
   double fontSize = 20,
   Color? backColor,
 }) {
   return Container(
-    height: height,
-    width: width,
+    height: MySize.getHeight(height),
+    width: MySize.getWidth(width),
     decoration: BoxDecoration(
-        color: (isNullEmptyOrFalse(backColor)) ? appTheme.primaryTheme : color,
+        border: Border.all(color: borderColor),
+        color:
+            (isNullEmptyOrFalse(backColor)) ? appTheme.primaryTheme : backColor,
         borderRadius: BorderRadius.circular(borderRadius)),
     alignment: Alignment.center,
     child: Text(

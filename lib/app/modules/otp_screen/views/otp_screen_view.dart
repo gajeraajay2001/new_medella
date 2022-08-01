@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:medella_new/app/constants/constants.dart';
 import 'package:pinput/pinput.dart';
+import '../../../../main.dart';
 import '../../../constants/color_constant.dart';
 import '../../../constants/sizeConstant.dart';
 import '../../../routes/app_pages.dart';
@@ -100,9 +102,13 @@ class OtpScreenView extends GetWidget<OtpScreenController> {
                                     await FirebaseAuth.instance.currentUser!;
                                 final idToken = await user.getIdToken();
                                 final token = idToken;
+                                print("Firebase Token := ${token}");
                                 if (!isNullEmptyOrFalse(token)) {
                                   controller.timerControl!.cancel();
-                                  Get.toNamed(Routes.HOME);
+                                  box.write(
+                                      ArgumentConstant.firebaseToken, token);
+                                  controller.callVerifyUserApi(
+                                      context: context);
                                 }
                                 print(value);
                               }).catchError((e) {

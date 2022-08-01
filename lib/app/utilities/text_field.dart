@@ -22,6 +22,8 @@ Widget getTextField({
   FormFieldValidator<String>? validation,
   double height = 60,
   double width = 335,
+  double hintSize = 14,
+  bool inlineBorder = false,
 }) {
   return Container(
     height: MySize.getHeight(height),
@@ -41,36 +43,58 @@ Widget getTextField({
             ? Color(0xff262626).withOpacity(0.09)
             : fillColor,
         filled: true,
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: borderColor),
-          borderRadius: BorderRadius.circular(
-              (borderRadius == null) ? MySize.getHeight(10) : borderRadius),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-              (borderRadius == null) ? MySize.getHeight(10) : borderRadius),
-          borderSide: BorderSide(color: borderColor),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-              (borderRadius == null) ? MySize.getHeight(10) : borderRadius),
-          borderSide: BorderSide(color: borderColor),
-        ),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(
-              (borderRadius == null) ? MySize.getHeight(10) : borderRadius),
-        ),
+        enabledBorder: (inlineBorder)
+            ? UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color(0xff262626).withOpacity(0.5)))
+            : OutlineInputBorder(
+                borderSide: BorderSide(color: borderColor),
+                borderRadius: BorderRadius.circular((borderRadius == null)
+                    ? MySize.getHeight(10)
+                    : borderRadius),
+              ),
+        focusedBorder: (inlineBorder)
+            ? UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color(0xff262626).withOpacity(0.5)))
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular((borderRadius == null)
+                    ? MySize.getHeight(10)
+                    : borderRadius),
+                borderSide: BorderSide(color: borderColor),
+              ),
+        errorBorder: (inlineBorder)
+            ? UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color(0xff262626).withOpacity(0.5)))
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular((borderRadius == null)
+                    ? MySize.getHeight(10)
+                    : borderRadius),
+                borderSide: BorderSide(color: borderColor),
+              ),
+        border: (inlineBorder)
+            ? UnderlineInputBorder(
+                borderSide:
+                    BorderSide(color: Color(0xff262626).withOpacity(0.5)))
+            : OutlineInputBorder(
+                borderRadius: BorderRadius.circular((borderRadius == null)
+                    ? MySize.getHeight(10)
+                    : borderRadius),
+              ),
         contentPadding: EdgeInsets.only(
-          left: MySize.getHeight(20),
+          left: (inlineBorder) ? 0 : MySize.getHeight(20),
           right: MySize.getHeight(10),
-          bottom: size! / 2, // HERE THE IMPORTANT PART
+          bottom: (inlineBorder)
+              ? MySize.getHeight(14)
+              : (size! / 2), // HERE THE IMPORTANT PART
         ),
         prefixIcon: prefixIcon,
         prefix: prefix,
         suffixIcon: suffixIcon,
         suffix: suffix,
         hintText: hintText,
-        hintStyle: TextStyle(fontSize: MySize.getHeight(14)),
+        hintStyle: TextStyle(fontSize: MySize.getHeight(hintSize)),
       ),
     ),
   );
