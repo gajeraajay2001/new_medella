@@ -1,9 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:medella_new/app/utilities/progress_dialog_utils.dart';
-
 import '../../../../main.dart';
 import '../../../constants/constants.dart';
 import '../../../constants/sizeConstant.dart';

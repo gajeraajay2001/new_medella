@@ -1,12 +1,10 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:medella_new/app/constants/color_constant.dart';
 import 'package:medella_new/app/constants/constants.dart';
 import 'package:medella_new/app/constants/sizeConstant.dart';
 import 'package:pinput/pinput.dart';
-
 import '../../../../main.dart';
 import '../../../data/NetworkClient.dart';
 import '../../../routes/app_pages.dart';
@@ -74,8 +72,18 @@ class OtpScreenController extends GetxController {
       successCallback: (response, message) {
         getIt<CustomDialogs>().hideCircularDialog(context);
 
-        if (response["status_code"] == 200 && response["response"] == true) {
-          // Get.toNamed(Routes.NEW_SIGN_UP);
+        if (response["status"] == "success") {
+          if (response["advisor"] == "new") {
+            if (!isNullEmptyOrFalse(response["token"])) {
+              box.write(ArgumentConstant.token, response["token"]);
+              Get.offAllNamed(Routes.NEW_SIGN_UP);
+            }
+          } else {
+            if (!isNullEmptyOrFalse(response["token"])) {
+              box.write(ArgumentConstant.token, response["token"]);
+              Get.offAllNamed(Routes.HOME);
+            }
+          }
         } else {
           getIt<CustomDialogs>()
               .getDialog(title: "Failed", desc: response["message"]);

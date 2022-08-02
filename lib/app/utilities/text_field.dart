@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/color_constant.dart';
 import '../constants/sizeConstant.dart';
@@ -35,6 +36,7 @@ Widget getTextField({
       keyboardType: textInputType,
       cursorColor: appTheme.primaryTheme,
       readOnly: readOnly,
+      textAlignVertical: TextAlignVertical.center,
       validator: validation,
       onTap: onTap,
       maxLines: maxLine,
