@@ -80,7 +80,8 @@ class NewSignUp2Controller extends GetxController {
           SignUpModel res = SignUpModel.fromJson(response);
           if (!isNullEmptyOrFalse(res.token)) {
             box.write(ArgumentConstant.token, res.token);
-            Get.offAllNamed(Routes.HOME);
+            Get.toNamed(Routes.SELECT_HOSPITAL_SCREEN);
+            // Get.offAllNamed(Routes.HOME);
           }
         } else {
           getIt<CustomDialogs>()

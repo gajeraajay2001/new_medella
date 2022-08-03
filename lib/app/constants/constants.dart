@@ -4,6 +4,8 @@ const baseUrl = "https://backend.medella.org/api/v1";
 class ApiConstant {
   static const verifyUser = "/users/verify";
   static const userSignUp = "/users/signup";
+  static const getHospitalList = "/hospitals";
+  static const addHospital = "/users/hospitals";
 }
 
 class ArgumentConstant {

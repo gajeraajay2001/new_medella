@@ -13,6 +13,7 @@ abstract class Routes {
   static const NEW_SIGN_UP = _Paths.NEW_SIGN_UP;
   static const NEW_SIGN_UP_2 = _Paths.NEW_SIGN_UP_2;
   static const NEW_SIGN_UP_3 = _Paths.NEW_SIGN_UP_3;
+  static const SELECT_HOSPITAL_SCREEN = _Paths.SELECT_HOSPITAL_SCREEN;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const NEW_SIGN_UP = '/new-sign-up';
   static const NEW_SIGN_UP_2 = '/new-sign-up-2';
   static const NEW_SIGN_UP_3 = '/new-sign-up-3';
+  static const SELECT_HOSPITAL_SCREEN = '/select-hospital-screen';
 }

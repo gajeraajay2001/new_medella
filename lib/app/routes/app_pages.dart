@@ -12,6 +12,8 @@ import 'package:medella_new/app/modules/new_sign_up_3/bindings/new_sign_up_3_bin
 import 'package:medella_new/app/modules/new_sign_up_3/views/new_sign_up_3_view.dart';
 import 'package:medella_new/app/modules/otp_screen/bindings/otp_screen_binding.dart';
 import 'package:medella_new/app/modules/otp_screen/views/otp_screen_view.dart';
+import 'package:medella_new/app/modules/select_hospital_screen/bindings/select_hospital_screen_binding.dart';
+import 'package:medella_new/app/modules/select_hospital_screen/views/select_hospital_screen_view.dart';
 import 'package:medella_new/app/modules/sign_screen/bindings/sign_screen_binding.dart';
 import 'package:medella_new/app/modules/sign_screen/views/sign_screen_view.dart';
 import 'package:medella_new/app/modules/sign_up_2_screen/bindings/sign_up_2_screen_binding.dart';
@@ -75,6 +77,11 @@ class AppPages {
       name: _Paths.NEW_SIGN_UP_3,
       page: () => NewSignUp3View(),
       binding: NewSignUp3Binding(),
+    ),
+    GetPage(
+      name: _Paths.SELECT_HOSPITAL_SCREEN,
+      page: () => SelectHospitalScreenView(),
+      binding: SelectHospitalScreenBinding(),
     ),
   ];
 }
