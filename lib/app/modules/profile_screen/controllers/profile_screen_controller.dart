@@ -1,13 +1,14 @@
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:medella_new/app/constants/sizeConstant.dart';
-import 'package:medella_new/app/models/user_profile_model.dart';
-import 'package:medella_new/app/utilities/progress_dialog_utils.dart';
+import 'package:get/get.dart';
 import '../../../../main.dart';
 import '../../../constants/constants.dart';
+import '../../../constants/sizeConstant.dart';
 import '../../../data/NetworkClient.dart';
+import '../../../models/hospital_list_model.dart';
+import '../../../models/user_profile_model.dart';
+import '../../../utilities/progress_dialog_utils.dart';
 
-class HomeController extends GetxController {
+class ProfileScreenController extends GetxController {
   RxBool hasData = false.obs;
   RxBool isOpen = false.obs;
   UserProfileData? profileData;
@@ -15,11 +16,6 @@ class HomeController extends GetxController {
   void onInit() {
     getUserProfileData(context: Get.context!);
     super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
   }
 
   getUserProfileData({required BuildContext context}) async {
@@ -56,6 +52,11 @@ class HomeController extends GetxController {
         print(" error");
       },
     );
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
   }
 
   @override

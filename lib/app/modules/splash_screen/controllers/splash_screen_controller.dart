@@ -11,7 +11,9 @@ class SplashScreenController extends GetxController {
   @override
   void onInit() {
     Timer(Duration(seconds: 1), () {
-      Get.offAllNamed(Routes.SIGN_SCREEN);
+      (!isNullEmptyOrFalse(box.read(ArgumentConstant.token)))
+          ? Get.offAllNamed(Routes.MAIN_SCREEN)
+          : Get.offAllNamed(Routes.SIGN_SCREEN);
     });
 
     super.onInit();

@@ -72,7 +72,7 @@ class OtpScreenController extends GetxController {
       successCallback: (response, message) {
         getIt<CustomDialogs>().hideCircularDialog(context);
 
-        if (response["status"] == "success") {
+        if (response["status"] == 200) {
           if (response["advisor"] == "new") {
             if (!isNullEmptyOrFalse(response["token"])) {
               box.write(ArgumentConstant.token, response["token"]);
@@ -81,8 +81,8 @@ class OtpScreenController extends GetxController {
           } else {
             if (!isNullEmptyOrFalse(response["token"])) {
               box.write(ArgumentConstant.token, response["token"]);
-              // Get.offAllNamed(Routes.HOME);
-              Get.offAllNamed(Routes.NEW_SIGN_UP);
+              Get.offAllNamed(Routes.MAIN_SCREEN);
+              // Get.offAllNamed(Routes.NEW_SIGN_UP);
             }
           }
         } else {

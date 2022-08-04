@@ -4,6 +4,8 @@ import 'package:medella_new/app/constants/constants.dart';
 import 'package:medella_new/app/constants/sizeConstant.dart';
 import 'package:medella_new/app/modules/home/bindings/home_binding.dart';
 import 'package:medella_new/app/modules/home/views/home_view.dart';
+import 'package:medella_new/app/modules/main_screen/bindings/main_screen_binding.dart';
+import 'package:medella_new/app/modules/main_screen/views/main_screen_view.dart';
 import 'package:medella_new/app/modules/new_sign_up/bindings/new_sign_up_binding.dart';
 import 'package:medella_new/app/modules/new_sign_up/views/new_sign_up_view.dart';
 import 'package:medella_new/app/modules/new_sign_up_2/bindings/new_sign_up_2_binding.dart';
@@ -12,6 +14,8 @@ import 'package:medella_new/app/modules/new_sign_up_3/bindings/new_sign_up_3_bin
 import 'package:medella_new/app/modules/new_sign_up_3/views/new_sign_up_3_view.dart';
 import 'package:medella_new/app/modules/otp_screen/bindings/otp_screen_binding.dart';
 import 'package:medella_new/app/modules/otp_screen/views/otp_screen_view.dart';
+import 'package:medella_new/app/modules/profile_screen/bindings/profile_screen_binding.dart';
+import 'package:medella_new/app/modules/profile_screen/views/profile_screen_view.dart';
 import 'package:medella_new/app/modules/select_hospital_screen/bindings/select_hospital_screen_binding.dart';
 import 'package:medella_new/app/modules/select_hospital_screen/views/select_hospital_screen_view.dart';
 import 'package:medella_new/app/modules/sign_screen/bindings/sign_screen_binding.dart';
@@ -82,6 +86,16 @@ class AppPages {
       name: _Paths.SELECT_HOSPITAL_SCREEN,
       page: () => SelectHospitalScreenView(),
       binding: SelectHospitalScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.MAIN_SCREEN,
+      page: () => MainScreenView(),
+      binding: MainScreenBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROFILE_SCREEN,
+      page: () => ProfileScreenView(),
+      binding: ProfileScreenBinding(),
     ),
   ];
 }

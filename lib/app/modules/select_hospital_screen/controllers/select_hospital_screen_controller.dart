@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:medella_new/app/constants/sizeConstant.dart';
 import 'package:medella_new/app/models/hospital_list_model.dart';
 import 'package:medella_new/app/routes/app_pages.dart';
-
 import '../../../../main.dart';
 import '../../../constants/constants.dart';
 import '../../../data/NetworkClient.dart';
@@ -21,7 +20,6 @@ class SelectHospitalScreenController extends GetxController {
   getHospitalList({required BuildContext context}) async {
     hasData.value = false;
     Map<String, dynamic> dict = {};
-
     return NetworkClient.getInstance.callApi(
       context,
       baseUrl,
@@ -70,7 +68,7 @@ class SelectHospitalScreenController extends GetxController {
         getIt<CustomDialogs>().hideCircularDialog(context);
         hasData.value = true;
         if (response["status"] == 200) {
-          Get.offAllNamed(Routes.HOME);
+          Get.offAllNamed(Routes.MAIN_SCREEN);
         } else {
           getIt<CustomDialogs>()
               .getDialog(title: "Failed", desc: response["message"]);

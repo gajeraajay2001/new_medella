@@ -19,13 +19,13 @@ class SignScreenView extends GetView<SignScreenController> {
     return Obx(() {
       return SafeArea(
         child: Scaffold(
-          body: SingleChildScrollView(
-            child: (controller.hasData.isFalse)
-                ? Center(
-                    child:
-                        CircularProgressIndicator(color: appTheme.primaryTheme),
-                  )
-                : Container(
+          body: (controller.hasData.isFalse)
+              ? Center(
+                  child:
+                      CircularProgressIndicator(color: appTheme.primaryTheme),
+                )
+              : SingleChildScrollView(
+                  child: Container(
                     alignment: Alignment.center,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -195,7 +195,7 @@ class SignScreenView extends GetView<SignScreenController> {
                       ],
                     ),
                   ),
-          ),
+                ),
         ),
       );
     });

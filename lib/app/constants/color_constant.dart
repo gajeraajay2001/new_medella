@@ -5,7 +5,9 @@ class BaseTheme {
   Color get primaryTheme => fromHex('#0072FF');
   Color get borderGrayTheme => fromHex('#E5E5E5');
   Color get grayTheme => fromHex('#F2F2F2');
+  Color get textGrayTheme => fromHex('#CDCDCD');
   Color get redColor => fromHex('#E41212');
+  Color get lightBlueColor => fromHex('#E4F0FF');
 }
 
 BaseTheme get appTheme => BaseTheme();
