@@ -11,6 +11,7 @@ class ApiConstant {
   static const getHospitalList = "/hospitals";
   static const addHospital = "/users/hospitals";
   static const getUserProfile = "/users/profile";
+  static const updateFiles = "/users/files";
 }
 
 class ArgumentConstant {

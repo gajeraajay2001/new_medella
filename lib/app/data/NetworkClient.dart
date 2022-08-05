@@ -13,6 +13,7 @@ class MethodType {
   static const String Post = "POST";
   static const String Get = "GET";
   static const String Put = "PUT";
+  static const String Patch = "PATCH";
   static const String Delete = "DELETE";
 }
 
@@ -90,6 +91,12 @@ class NetworkClient {
 
       case MethodType.Put:
         Response response = await dio.put(baseUrl + command, data: params);
+        parseResponse(context, response,
+            successCallback: successCallback!,
+            failureCallback: failureCallback!);
+        break;
+      case MethodType.Patch:
+        Response response = await dio.patch(baseUrl + command, data: params);
         parseResponse(context, response,
             successCallback: successCallback!,
             failureCallback: failureCallback!);
