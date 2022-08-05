@@ -167,7 +167,7 @@ class SignScreenView extends GetView<SignScreenController> {
                           children: [
                             InkWell(
                               onTap: () {
-                                Get.toNamed(Routes.SIGN_UP_SCREEN);
+                                // Get.toNamed(Routes.SIGN_UP_SCREEN);
                               },
                               child: getContainer(
                                   height: 42,

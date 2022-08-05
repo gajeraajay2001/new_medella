@@ -131,6 +131,7 @@ class HomeView extends GetWidget<HomeController> {
                                                         url: controller
                                                             .profileData!
                                                             .userImage!,
+                                                        boxFit: BoxFit.cover,
                                                         height:
                                                             MySize.getHeight(
                                                                 100),

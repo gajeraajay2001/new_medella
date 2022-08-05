@@ -9,7 +9,6 @@ import 'package:medella_new/app/models/sign_up_model.dart';
 import 'package:medella_new/app/utilities/progress_dialog_utils.dart';
 import 'package:medella_new/main.dart';
 import 'package:path/path.dart' as p;
-
 import '../../../routes/app_pages.dart';
 
 class NewSignUp2Controller extends GetxController {
@@ -90,9 +89,14 @@ class NewSignUp2Controller extends GetxController {
       },
       failureCallback: (response, message) {
         getIt<CustomDialogs>().hideCircularDialog(context);
+        if (response == 400) {
+          getIt<CustomDialogs>().getDialog(
+              title: "Failed", desc: "Social Security must be unique.");
+        } else {
+          getIt<CustomDialogs>()
+              .getDialog(title: "Failed", desc: "Something went wrong.");
+        }
 
-        getIt<CustomDialogs>()
-            .getDialog(title: "Failed", desc: "Something went wrong.");
         print(" error");
       },
     );

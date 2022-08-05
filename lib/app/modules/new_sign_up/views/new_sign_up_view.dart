@@ -68,7 +68,7 @@ class NewSignUpView extends GetWidget<NewSignUpController> {
                                 width: MySize.getWidth(23),
                                 padding: EdgeInsets.only(
                                     right: MySize.getWidth(0),
-                                    bottom: MySize.getHeight(5)),
+                                    bottom: MySize.getHeight(10)),
                                 alignment: Alignment.center,
                                 child:
                                     SvgPicture.asset(imagePath + "user_01.svg"),
@@ -96,7 +96,7 @@ class NewSignUpView extends GetWidget<NewSignUpController> {
                                 width: MySize.getWidth(23),
                                 padding: EdgeInsets.only(
                                     right: MySize.getWidth(0),
-                                    bottom: MySize.getHeight(5)),
+                                    bottom: MySize.getHeight(10)),
                                 alignment: Alignment.center,
                                 child: SvgPicture.asset(
                                     imagePath + "calendar_icon.svg"),
@@ -118,7 +118,7 @@ class NewSignUpView extends GetWidget<NewSignUpController> {
                                 width: MySize.getWidth(23),
                                 padding: EdgeInsets.only(
                                     right: MySize.getWidth(0),
-                                    bottom: MySize.getHeight(5)),
+                                    bottom: MySize.getHeight(10)),
                                 alignment: Alignment.center,
                                 child: SvgPicture.asset(
                                     imagePath + "shield_icon.svg"),
@@ -140,7 +140,7 @@ class NewSignUpView extends GetWidget<NewSignUpController> {
                                 width: MySize.getWidth(23),
                                 padding: EdgeInsets.only(
                                     right: MySize.getWidth(0),
-                                    bottom: MySize.getHeight(5)),
+                                    bottom: MySize.getHeight(10)),
                                 alignment: Alignment.center,
                                 child: SvgPicture.asset(
                                     imagePath + "id_card_icon.svg"),

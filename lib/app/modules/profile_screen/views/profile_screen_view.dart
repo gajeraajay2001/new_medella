@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:medella_new/app/constants/sizeConstant.dart';
 import 'package:medella_new/app/utilities/utilities.dart';
 import '../../../../main.dart';
@@ -39,6 +40,7 @@ class ProfileScreenView extends GetWidget<ProfileScreenController> {
                                   color: Colors.white,
                                   child: getImageByLink(
                                       url: controller.profileData!.userImage!,
+                                      boxFit: BoxFit.cover,
                                       height: MySize.getHeight(100),
                                       width: MySize.getWidth(100)),
                                 ),
@@ -77,10 +79,12 @@ class ProfileScreenView extends GetWidget<ProfileScreenController> {
                                                 .profileData!.userName
                                                 .toString()),
                                         getTextData(
-                                            text1: "Name",
-                                            text2: controller
-                                                .profileData!.userName
-                                                .toString()),
+                                            text1: "Date of birth",
+                                            text2: DateFormat("dd MMM, yyyy")
+                                                .format(DateFormat("yyyy-mm-dd")
+                                                    .parse(controller
+                                                        .profileData!.dob
+                                                        .toString()))),
                                       ],
                                     ),
                                     SizedBox(height: MySize.getHeight(30)),
@@ -164,12 +168,13 @@ class ProfileScreenView extends GetWidget<ProfileScreenController> {
     return Padding(
         padding: EdgeInsets.symmetric(horizontal: 10),
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(
-              Icons.chevron_left,
-              size: MySize.getHeight(35),
-            ),
-            SizedBox(width: MySize.getWidth(44)),
+            // Icon(
+            //   Icons.chevron_left,
+            //   size: MySize.getHeight(35),
+            // ),
+            // SizedBox(width: MySize.getWidth(44)),
             Container(
               height: MySize.getHeight(30),
               width: MySize.getWidth(164),

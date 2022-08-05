@@ -1,10 +1,7 @@
 import 'dart:io';
-
 import 'package:csc_picker/csc_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:medella_new/app/constants/constants.dart';
-import 'package:medella_new/app/routes/app_pages.dart';
 import 'package:medella_new/app/utilities/progress_dialog_utils.dart';
 import '../../../../main.dart';
 import '../../../constants/color_constant.dart';
@@ -123,6 +120,7 @@ class NewSignUp2View extends GetWidget<NewSignUp2Controller> {
                               controller.cityValue.value =
                                   value ?? "Select City";
                             },
+                            defaultCountry: DefaultCountry.United_States,
                           ),
                           // SelectState(
                           //   onCountryChanged: (value) {
